@@ -1,0 +1,54 @@
+* {
+  --press-down-offset: 14px;
+  background: #777777;
+}
+
+button {
+  color: white;
+  font-size: 1.2em;
+  height: 50px;
+  width: 100px;
+  background: #3e9df766;
+  box-shadow: 0 10px 4px 0 black;
+  border-radius: 25px;
+  border-color: transparent;
+  margin: 10px;
+}
+
+button:hover {
+  background: #3e9df7;
+}
+button:active {
+  background: blue;
+  box-shadow: none;
+  transform: translateY(var(--press-down-offset));
+}
+
+.buttonList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cursor {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  background: #66ff0086;
+  border-radius: 25px;
+  pointer-events: none;
+  transform: translateY(-70px);
+  transition: 0.5s;
+}
+
+.buttonList button:hover:nth-child(1) ~ .cursor {
+  transform: translateY(calc(70px * -1));
+}
+.buttonList button:hover:nth-child(2) ~ .cursor {
+  transform: translateY(calc(70px * 0));
+}
+.buttonList button:hover:nth-child(3) ~ .cursor {
+  transform: translateY(calc(70px * 1));
+}
